@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1051</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="read_csv">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>320</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>.csv데이터 불러오기</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="current_list">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="df_state">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>400</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>데이터를 불러와주세요</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>현재 파일명 :</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="add_list">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>30</y>
+     <width>261</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="selected_list">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>30</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>현재 테이블 변수목록</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>10</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>추가 할 변수목록</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>10</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>추가 된 변수목록</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_button">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>70</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>추가  &gt;&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_button">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>110</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;&lt;  제거</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="test">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>520</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>FOR TEST</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clear_button">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>150</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;&lt; 전부제거</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="test_button">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>500</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test_button</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="merge_button">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>70</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>합치기&gt;&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="key_A_button">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>240</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>병합기준변수추가</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="key_B_button">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>240</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>병합기준변수추가</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="key_listA">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>280</y>
+     <width>256</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="key_listB">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>280</y>
+     <width>256</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>290</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>310</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_3">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>330</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="key_AD_button">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>240</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>병합기준변수제거</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="key_BD_button">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>240</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>병합기준변수제거</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="export_button">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>420</y>
+     <width>261</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>파일 생성하기</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="export_name">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>380</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>result</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>380</y>
+     <width>56</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>파일명</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="read_xlsx">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>.xlsx데이터 불러오기</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="sheetname_combo">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>360</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>370</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>시트명</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>read_csv</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>importbutton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>list_add_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>list_delete_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>list_clear_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>test_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>test_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>857</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>merge_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>merge_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>key_A_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>key_A()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>key_B_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>key_B()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>key_AD_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>key_AD()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>key_BD_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>key_BD()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>930</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>current_list</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>Dialog</receiver>
+   <slot>current_doubleclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>export_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>export_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>860</x>
+     <y>450</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>read_xlsx</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>xlsximport_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sheetname_combo</sender>
+   <signal>activated(QString)</signal>
+   <receiver>Dialog</receiver>
+   <slot>combo_select()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>importbutton_clicked()</slot>
+  <slot>var_addbutton_clicked()</slot>
+  <slot>list_add_clicked()</slot>
+  <slot>list_delete_clicked()</slot>
+  <slot>list_clear_clicked()</slot>
+  <slot>test_clicked()</slot>
+  <slot>merge_clicked()</slot>
+  <slot>key_A()</slot>
+  <slot>key_B()</slot>
+  <slot>key_AD()</slot>
+  <slot>key_BD()</slot>
+  <slot>current_doubleclicked()</slot>
+  <slot>export_clicked()</slot>
+  <slot>xlsximport_clicked()</slot>
+  <slot>combo_select()</slot>
+ </slots>
+</ui>
