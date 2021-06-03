@@ -6,6 +6,7 @@ import pandas as pd
 import os
 
 
+
 class merge_vars:
     current_df = []
     result_df = pd.DataFrame()
@@ -37,8 +38,10 @@ class Form(QtWidgets.QDialog):
         self.sheetname_combo.clear()
         options = QFileDialog.Options()
         fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*)", options=options)
-        self.sheetname_combo.addItems(pd.ExcelFile(fileName).sheet_names)
-        merge_vars.fileName =fileName
+        if fileName:
+            self.sheetname_combo.addItems(pd.ExcelFile(fileName).sheet_names)
+            merge_vars.fileName =fileName
+        self.add_list.clear()
 
 
 
@@ -96,35 +99,44 @@ class Form(QtWidgets.QDialog):
         if merge_vars.result_df.empty==True:
 
             add_list = [self.add_list.item(x).text() for x in range(self.add_list.count())]
-            merge_vars.result_df = merge_vars.current_df[add_list]
-            print(merge_vars.result_df)
+            if add_list == []:
+                msgBox = QMessageBox()
+                msgBox.setText("추가할 변수 목록이 비어있음!")
+                msgBox.exec()
+            else:
+                merge_vars.result_df = merge_vars.current_df[add_list]
+                print(merge_vars.result_df)
 
         else:
             add_list = [self.add_list.item(x).text() for x in range(self.add_list.count())]
-            current_df = merge_vars.current_df[add_list]
-            merge_vars.result_df = pd.merge(current_df, merge_vars.result_df, left_on = [self.key_listA.item(x).text() for x in range(self.key_listA.count())], right_on = [self.key_listB.item(x).text() for x in range(self.key_listB.count())], how = 'outer')
-            print(merge_vars.result_df.columns)
+            if add_list == []:
+                msgBox = QMessageBox()
+                msgBox.setText("추가할 변수 목록이 비어있음!")
+                msgBox.exec()
+            else:
+                current_df = merge_vars.current_df[add_list]
+                merge_vars.result_df = pd.merge(current_df, merge_vars.result_df, left_on = [self.key_listA.item(x).text() for x in range(self.key_listA.count())], right_on = [self.key_listB.item(x).text() for x in range(self.key_listB.count())], how = 'outer')
+                print(merge_vars.result_df.columns)
 
         self.selected_list.clear()
         self.selected_list.addItems(merge_vars.result_df.columns)
         self.add_list.clear()
 
     def export_clicked(self):
+        if self.check_nan.isChecked():
+            merge_vars.result_df.dropna(axis=0, inplace= True, subset=[self.key_listB.item(x).text() for x in range(self.key_listB.count())])
+            print("drop it")
+            print(merge_vars.result_df)
         merge_vars.result_df.to_csv(self.export_name.text()+".csv", encoding = 'utf-8-sig')
         self.selected_list.clear()
+        self.add_list.clear()
         merge_vars.result_df = pd.DataFrame()
         merge_vars.add_list = []
 
 
 
     def test_clicked(self):
-        msgBox = QMessageBox()
-        msgBox.setIcon(QMessageBox.Information)
-        msgBox.setText("Message box pop up window")
-        msgBox.setWindowTitle("QMessageBox Example")
-        msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-        returnValue = msgBox.exec()
-
+        print(self.check_nan.isChecked())
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

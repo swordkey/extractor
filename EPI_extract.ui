@@ -390,6 +390,19 @@
     <string>시트명</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="check_nan">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>430</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>매칭 안되는 데이터 제거하여 생성</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
